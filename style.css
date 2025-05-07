@@ -1,0 +1,57 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background: white;
+  color: #0043aa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.icon img {
+  width: 30px;
+  height: auto;
+}
+
+main h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+main p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.van-img {
+  width: 400px;
+  max-width: 90%;
+  height: auto;
+}
