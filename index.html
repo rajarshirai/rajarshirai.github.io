@@ -1,115 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>365 Days Grid</title>
-
-<style>
-  :root {
-    --bg-color: #0e0e0e;
-    --dot-size: 12px;
-    --dot-gap: 10px;
-    --dot-empty: #3a3a3a;
-    --dot-filled: #ffffff;
-    --dot-accent: #ff6a2a;
-  }
-
-  html, body {
-    margin: 0;
-    height: 100%;
-    background: var(--bg-color);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-
-  .container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 250px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(15, var(--dot-size));
-    gap: var(--dot-gap);
-  }
-
-  .dot {
-    width: var(--dot-size);
-    height: var(--dot-size);
-    border-radius: 50%;
-    background: var(--dot-empty);
-  }
-
-  .dot.filled {
-    background: var(--dot-filled);
-  }
-
-  .dot.accent {
-    background: var(--dot-accent);
-  }
-
-  .footer {
-    position: fixed;
-    bottom: 60px;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    color: #888;
-  }
-
-  .footer span {
-    color: var(--dot-accent);
-    font-weight: 500;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="container">
-    <div id="grid" class="grid"></div>
-  </div>
+  <header>
+    <div class="logo">GILLU</div>
+    <div class="icon">
+      <img src="images/logo.png" alt="logo icon" />
+    </div>
+  </header>
 
-  <div class="footer">
-    <span id="daysLeft"></span> · <span id="percent"></span>
-  </div>
-
-<script>
-  const TOTAL_DOTS = 365;
-
-  const today = new Date();
-  const startOfYear = new Date(today.getFullYear(), 0, 1);
-
-  const dayOfYear =
-    Math.floor((today - startOfYear) / (1000 * 60 * 60 * 24)) + 1;
-
-  const FILLED_DOTS = Math.min(dayOfYear, TOTAL_DOTS);
-
-  const grid = document.getElementById("grid");
-
-  for (let i = 0; i < TOTAL_DOTS; i++) {
-    const dot = document.createElement("div");
-    dot.classList.add("dot");
-
-    if (i < FILLED_DOTS) {
-      dot.classList.add("filled");
-    }
-
-    if (i === FILLED_DOTS - 1 && FILLED_DOTS > 0) {
-      dot.classList.remove("filled");
-      dot.classList.add("accent");
-    }
-
-    grid.appendChild(dot);
-  }
-
-  const daysLeft = TOTAL_DOTS - FILLED_DOTS;
-  const percent = Math.round((FILLED_DOTS / TOTAL_DOTS) * 100);
-
-  document.getElementById("daysLeft").textContent = `${daysLeft}d left`;
-  document.getElementById("percent").textContent = `${percent}%`;
-</script>
+  <main>
+    <h1>Easy on Refresh!</h1>
+    <p>We're coming soon…</p>
+    <img src="images/van_cartoon.png" alt="Delivery Van Illustration" class="van-img" />
+  </main>
 </body>
 </html>
